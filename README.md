@@ -28,7 +28,7 @@ Une application de bureau développée en JavaFX pour la gestion complète d’u
 ### Étapes :
 1. Cloner le projet
 2. Ouvrir le dossier dans **NetBeans 25**
-3. Configurer la base de données ( )
+3. Configurer la base de données (./spa_database.sql )
 4. Lancer le fichier `Main.java`
 
 ## 👩‍💻 Développeuse
