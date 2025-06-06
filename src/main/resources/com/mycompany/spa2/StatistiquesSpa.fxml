@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" style="-fx-background-color: #F8F5F0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.spa2.StatistiquesSpaController">
+   <top>
+      <AnchorPane prefHeight="110.0" prefWidth="1200.0" style="-fx-background-color: linear-gradient(to right, #C69B7B, #AB7C59);" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="450.0" layoutY="30.0" text="STATISTIQUES" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="395.0" layoutY="70.0" text="Analyse de performance de votre entreprise" textFill="#f5f0eb">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow height="5.0" radius="2.0" spread="0.05" />
+         </effect>
+      </AnchorPane>
+   </top>
+   <center>
+      <ScrollPane fitToWidth="true" prefHeight="690.0" prefWidth="1160.0" style="-fx-background-color: transparent; -fx-background: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefWidth="1160.0" spacing="20.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="15.0">
+                     <children>
+                        <Label text="Période d'analyse:" style="-fx-text-fill: #6D4C41;">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="periodComboBox" prefHeight="35.0" prefWidth="200.0" promptText="Sélectionnez..." style="-fx-background-color: white; -fx-border-color: #D7CCC8; -fx-border-radius: 3px;" />
+                        <Button fx:id="btnActualiser" mnemonicParsing="false" onAction="#actualiserStatistiques" prefHeight="35.0" prefWidth="150.0" style="-fx-background-color: #8D6E63; -fx-text-fill: white; -fx-background-radius: 3px;" text="ACTUALISER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="3.0" radius="1.0" width="3.0" color="#00000066" />
+                           </effect>
+                        </Button>
+                         <Button fx:id="btnRetour" mnemonicParsing="false" onAction="#retourDashboard" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color:  #5D3A2D; -fx-text-fill: white; -fx-background-radius: 3px;" text="RETOUR">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="3.0" radius="1.0" width="3.0" color="#00000066"/>
+                           </effect>
+                        </Button>
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="20.0">
+                     <children>
+                        <!-- KPI Cards -->
+                        <VBox spacing="15.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Label text="Indicateurs de performance" style="-fx-text-fill: #6D4C41;">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <Separator prefWidth="200.0" style="-fx-background-color: #D7CCC8;" />
+                              
+                              <HBox spacing="15.0">
+                                 <children>
+                                    <!-- Clients -->
+<VBox alignment="CENTER" prefHeight="120.0" prefWidth="260.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #FF0000, #CC0000); -fx-background-radius: 10px;">
+                                       <children>
+                                          <Label text="Clients" textFill="#6D4C41">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblTotalClients" text="0" textFill="#5C6BC0">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblNouveauxClients" text="0 nouveaux" textFill="#8D6E63">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                       </padding>
+                                       <effect>
+                                          <DropShadow color="#00000026" height="6.0" radius="2.5" width="6.0" />
+                                       </effect>
+                                    </VBox>
+                                    
+                                    <!-- Rendez-vous -->
+<VBox alignment="CENTER" prefHeight="120.0" prefWidth="260.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #3498db, #2980b9); -fx-background-radius: 10px;">
+                                       <children>
+                                          <Label text="Rendez-vous" textFill="#6D4C41">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblTotalRdv" text="0" textFill="#66BB6A">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblRdvCompletes" text="0 complétés" textFill="#8D6E63">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                       </padding>
+                                       <effect>
+                                          <DropShadow color="#00000026" height="6.0" radius="2.5" width="6.0" />
+                                       </effect>
+                                    </VBox>
+                                    
+                                    <!-- Revenus -->
+<VBox alignment="CENTER" prefHeight="120.0" prefWidth="260.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #f39c12, #d68910); -fx-background-radius: 10px;">
+                                       <children>
+                                          <Label text="Revenus" textFill="#6D4C41">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblRevenuTotal" text="0 €" textFill="#FFA726">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblRevenuMensuel" text="0 € ce mois" textFill="#8D6E63">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                       </padding>
+                                       <effect>
+                                          <DropShadow color="#00000026" height="6.0" radius="2.5" width="6.0" />
+                                       </effect>
+                                    </VBox>
+                                    
+                                    <!-- Abonnements -->
+                                    <VBox alignment="CENTER" prefHeight="120.0" prefWidth="260.0" style="-fx-background-color: linear-gradient(to bottom right, #2ecc71, #27ae60); -fx-background-radius: 10px;">
+                                       <children>
+                                          <Label text="Abonnements" textFill="#6D4C41">
+                                             <font>
+                                                <Font name="System Bold" size="16.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblTotalAbonnements" text="0" textFill="#EF5350">
+                                             <font>
+                                                <Font name="System Bold" size="36.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="lblNouveauxAbonnements" text="0 nouveaux" textFill="#8D6E63">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                                       </padding>
+                                       <effect>
+                                          <DropShadow color="#00000026" height="6.0" radius="2.5" width="6.0" />
+                                       </effect>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  
+                  <HBox spacing="20.0">
+                     <!-- Services populaires (PieChart) -->
+<VBox prefHeight="400.0" prefWidth="550.0" spacing="10.0"
+      style="-fx-background-color: linear-gradient(to bottom right, #f5f5dc,  #5D3A2D); -fx-background-radius: 10px;">
+
+                        <children>
+                           <Label text="Services les plus populaires" style="-fx-text-fill: #6D4C41;">
+                              <font>
+                                 <Font name="System Bold" size="16.0" />
+                              </font>
+                           </Label>
+                           <Separator prefWidth="200.0" style="-fx-background-color: #D7CCC8;" />
+                           <PieChart fx:id="servicesChart" prefHeight="350.0" prefWidth="500.0" />
+                        </children>
+                        <padding>
+                           <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding>
+                        <effect>
+                           <DropShadow color="#00000026" height="10.0" radius="4.5" width="10.0" />
+                        </effect>
+                     </VBox>
+                     
+                     <!-- Rendez-vous par mois (BarChart) -->
+                     <VBox prefHeight="400.0" prefWidth="550.0" spacing="10.0" style="-fx-background-color:  #5D3A2D; -fx-background-radius: 10px;">
+                        <children>
+                           <Label text="Évolution des rendez-vous" style="-fx-text-fill: #BCAAA4;">
+                              <font>
+                                 <Font name="System Bold" size="16.0" />
+                              </font>
+                           </Label>
+                           <Separator prefWidth="200.0" style="-fx-background-color: #D7CCC8;" />
+                           <BarChart fx:id="rdvChart" prefHeight="350.0" prefWidth="500.0">
+                              <xAxis>
+                                 <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                              </xAxis>
+                              <yAxis>
+                                 <NumberAxis fx:id="yAxis" side="LEFT" />
+                              </yAxis>
+                           </BarChart>
+                        </children>
+                        <padding>
+                           <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                        </padding>
+                        <effect>
+                           <DropShadow color="#00000026" height="10.0" radius="4.5" width="10.0" />
+                        </effect>
+                     </VBox>
+                  </HBox>
+                  
+                  <HBox spacing="20.0">
+                     <!-- Revenus mensuels (BarChart) -->
+                     <VBox prefHeight="400.0" prefWidth="1120.0" spacing="10.0" style="-fx-background-color:  #5D3A2D; -fx-background-radius: 10px;">
+                        <children>
+                           <Label text="Revenus mensuels" style="-fx-text-fill: #BCAAA4;">
+                              <font>
+                                 <Font name="System Bold" size="16.0" />
+                              </font>
+                           </Label>
+                           <Separator prefWidth="200.0" style="-fx-background-color: #D7CCC8;" />
+                           <BarChart fx:id="revenusChart" prefHeight="350.0" prefWidth="1100.0">
+                              <xAxis>
+                                 <CategoryAxis side="BOTTOM" fx:id="xAxisRevenus" />
+                              </xAxis>
+                              <yAxis>
+                                 <NumberAxis fx:id="yAxisRevenus" side="LEFT" />
+                              </yAxis>
+                           </BarChart>
+                        </children>
+                        <padding>
+                           <Insets bottom="20.0" left="10.0" right="15.0" top="15.0" />
+                        </padding>
+                        <effect>
+                           <DropShadow color="#00000026" height="10.0" radius="4.5" width="10.0" />
+                        </effect>
+                     </VBox>
+                  </HBox>
+                  
+               </children>
+               <padding>
+                  <Insets bottom="80.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="20.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </ScrollPane>
+   </center>
+</BorderPane>

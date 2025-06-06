@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" style="-fx-background-color: #F5F0EB;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.spa2.RendezVousController">
+   <top>
+      <AnchorPane prefHeight="100.0" prefWidth="1000.0" style="-fx-background-color: #AB7C59;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="328.0" layoutY="25.0" text="GESTION DES RENDEZ-VOUS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="378.0" layoutY="65.0" text="Planifiez et gérez vos rendez-vous" textFill="#f5f0eb">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+   </top>
+   <left>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="600.0" prefWidth="350.0" style="-fx-background-color: transparent; -fx-background: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="600.0" prefWidth="330.0" spacing="15.0" style="-fx-background-color: white; -fx-background-radius: 10px;">
+               <children>
+                  <Label text="Nouveau Rendez-vous" style="-fx-text-fill: #795029 ;" >
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Separator prefWidth="200.0" />
+                  <Label text="Client" textFill="#ab7c59">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="10.0">
+                     <children>
+                        <ComboBox fx:id="clientComboBox" prefHeight="35.0" prefWidth="230.0" promptText="Sélectionner un client" />
+                        <Button fx:id="btnNouveauClient" mnemonicParsing="false" onAction="#handleNouveauClient" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #DBC1AC; -fx-text-fill: #4A3728;" text="+ Nouveau">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Label text="Service" textFill="#ab7c59">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="serviceComboBox" prefHeight="35.0" prefWidth="330.0" promptText="Sélectionner un service" />
+                  <Label text="Employé" textFill="#ab7c59">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="employeComboBox" prefHeight="35.0" prefWidth="330.0" promptText="Sélectionner un employé" />
+                  <Label text="Date" textFill="#ab7c59">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="datePicker" prefHeight="35.0" prefWidth="330.0" promptText="Sélectionner une date" />
+                  <Label text="Heure" textFill="#ab7c59">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="10.0">
+                     <children>
+                        <ComboBox fx:id="heureComboBox" prefHeight="35.0" prefWidth="160.0" promptText="Heure" />
+                        <ComboBox fx:id="minuteComboBox" prefHeight="35.0" prefWidth="160.0" promptText="Minute" />
+                     </children>
+                  </HBox>
+                  <Label text="Statut" textFill="#ab7c59">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="statutComboBox" prefHeight="35.0" prefWidth="330.0" promptText="Sélectionner un statut" />
+                  <HBox alignment="CENTER" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnEnregistrer" mnemonicParsing="false" onAction="#handleEnregistrer" prefHeight="45.0" prefWidth="155.0" style="-fx-background-color: #AB7C59; -fx-text-fill: white;" text="ENREGISTRER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="4.0" radius="1.5" width="4.0" />
+                           </effect>
+                        </Button>
+                        <Button fx:id="btnAnnuler" mnemonicParsing="false" onAction="#handleAnnuler" prefHeight="45.0" prefWidth="155.0" style="-fx-background-color: #E6D7CE; -fx-text-fill: #4A3728;" text="ANNULER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
+               </padding>
+               <effect>
+                  <DropShadow color="#00000040" height="10.0" radius="4.5" width="10.0" />
+               </effect>
+            </VBox>
+         </content>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="10.0" top="20.0" />
+         </BorderPane.margin>
+      </ScrollPane>
+   </left>
+   <center>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: transparent; -fx-background: transparent;" BorderPane.alignment="CENTER">
+         <content>
+            <VBox prefHeight="600.0" prefWidth="600.0" spacing="15.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="15.0" prefWidth="554.0" spacing="15.0">
+                     <children>
+                        <Label text="Rendez-vous" style="-fx-text-fill: #795029 ;">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Separator prefWidth="200.0" />
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="txtRecherche" prefHeight="35.0" prefWidth="250.0" promptText="Rechercher...">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnRechercher" mnemonicParsing="false" onAction="#handleRechercher" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: #AB7C59; -fx-text-fill: white;" text="Rechercher">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tableRendezVous" prefHeight="380.0" style="-fx-border-color: #DBC1AC; -fx-border-width: 2px;">
+                     <columns>
+                        <TableColumn fx:id="colId" prefWidth="50.0" text="ID" style="-fx-text-fill: #000000 ;"  />
+                        <TableColumn fx:id="colClient" prefWidth="130.0" text="Client" style="-fx-text-fill: #000000 ;"  />
+                        <TableColumn fx:id="colService" prefWidth="120.0" text="Service" style="-fx-text-fill: #000000 ;" />
+                        <TableColumn fx:id="colEmploye" prefWidth="120.0" text="Employé" style="-fx-text-fill: #000000 ;" />
+                        <TableColumn fx:id="colDate" prefWidth="100.0" text="Date" style="-fx-text-fill: #000000 ;" />
+                        <TableColumn fx:id="colHeure" prefWidth="70.0" text="Heure" style="-fx-text-fill: #000000 ;" />
+                        <TableColumn fx:id="colStatut" prefWidth="100.0" text="Statut" style="-fx-text-fill: #000000 ;" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER_RIGHT" spacing="15.0">
+                     <children>
+                        <Button fx:id="btnModifier" mnemonicParsing="false" onAction="#handleModifier" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #f39c12; -fx-text-fill: white;"  text="MODIFIER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnSupprimer" mnemonicParsing="false" onAction="#handleSupprimer" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="SUPPRIMER">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnRafraichir" mnemonicParsing="false" onAction="#handleRafraichir" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #AB7C59; -fx-text-fill: white;" text="RAFRAÎCHIR">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                         <Button fx:id="btnRevenir" mnemonicParsing="false" onAction="#revenirDashboard" prefHeight="40.0" prefWidth="140.0" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Revenir">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </content>
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="10.0" right="20.0" top="20.0" />
+         </BorderPane.margin>
+      </ScrollPane>
+   </center>
+</BorderPane>
+
